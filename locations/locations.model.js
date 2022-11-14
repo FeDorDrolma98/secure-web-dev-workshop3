@@ -1,3 +1,5 @@
+// This file holds the Database Layer
+
 const mongoose = require('mongoose')
 
 const filmSchema = new mongoose.Schema({

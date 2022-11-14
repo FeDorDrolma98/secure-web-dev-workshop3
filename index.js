@@ -2,7 +2,7 @@ const express = require('express')
 const locationController = require('./locations/locations.controller')
 const app = express()
 const port = 3000
-
+'use strict'
 
 app.use(locationController)
 
