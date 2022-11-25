@@ -2,6 +2,8 @@
 
 const mongoose = require('mongoose')
 
+mongoose.connect(process.env.MONGO_URI).then((res)=>console.log('connecté')).catch((e)=>console.log(e));
+
 const filmSchema = new mongoose.Schema({
 	filmType: String,
 	filmProducerName: String,
