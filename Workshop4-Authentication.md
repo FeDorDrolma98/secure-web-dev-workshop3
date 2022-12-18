@@ -85,7 +85,7 @@ router.get('/locations', (req, res) => res.send(200).body({ locations: [], user:
 1. Create a new resource: `Users`
     1. Create a new `users` folder containing a user model, service and controller
         1. A `user` has a **username** and a **password**
-    2. Register the `users.controller.js` in Express router (`index.js`). The controller must offer the following
+    2. Register the `users.controller.test.js` in Express router (`index.js`). The controller must offer the following
        routes:
         1. Register POST `/users/register`
         2. Login POST `/users/login`

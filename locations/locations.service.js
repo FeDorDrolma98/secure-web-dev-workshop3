@@ -1,23 +1,33 @@
 // This file holds the Business-Logic layer, interacting with Data Layer
-
 const Location = require('./locations.model')
 
-function findAll () {
-	//return [1,2,3,4]
-	//return JSON.stringify(Location.find());
+async function findAll () {
+	return Location.find();
 }
-function findOne (id) {
+async function findOne (id) {
 	return Location.findById(id);
-	//return Location.findOne({_id:id});
-}//63332292db08aee5dea35777
-
-async function add (newloc){
-	const locloc=new Location({
-		"filmType": newloc.type_tournage,
-	})
 }
 
+async function addLocation (filmType,filmProducerName,endDate,filmName,district,geolocation,sourceLocationId,filmDirectorName,address,startDate,year){
+	const newLocation=new Location({
+		"filmType": filmType,
+		"filmProducerName": filmProducerName,
+		"endDate": endDate,
+		"filmName": filmName,
+		"district": district,
+		"geolocation": geolocation,
+		"sourceLocationId": sourceLocationId,
+		"filmDirectorName": filmDirectorName,
+		"address": address,
+		"startDate":startDate,
+		"year": year,
+	})
+	newLocation.save().then((res)=>console.log('enregistré !')).catch((e)=>console.log(e));
+}
 
+async function renvoiModel(){
+	return Location;
+}
 
-module.exports.findAll = findAll
-module.exports.findOne = findOne
+module.exports={findAll, findOne, addLocation,renvoiModel}
+
